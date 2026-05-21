@@ -104,6 +104,8 @@ with st.sidebar:
                       help="Tokens matching top-p cumulative probability are kept.")
     max_new_tokens = st.slider("Max New Tokens", min_value=64, max_value=512, value=256, step=32,
                                help="Maximum number of tokens the model generates.")
+    repetition_penalty = st.slider("Repetition Penalty", min_value=1.0, max_value=2.0, value=1.2, step=0.05,
+                                   help="Penalty for repeating tokens. 1.0 means no penalty. Recommended: 1.15 - 1.30")
     
     st.divider()
     
@@ -257,6 +259,7 @@ def generate_text(model, tokenizer, prompt, use_base_only=False):
                 do_sample=True,
                 temperature=temperature,
                 top_p=top_p,
+                repetition_penalty=repetition_penalty,
             )
             
     input_length = inputs.input_ids.shape[1]
