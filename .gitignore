@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+
+# IDE Settings
+.vscode/
+.idea/
+.gemini/
+
+# Model checkpoints and logs (keep final adapter files but ignore training checkpoints/logs)
+medical_llama3_lora/checkpoint-*/
+medical_llama3_lora/logs/
+
+# General caches
+.cache/
+.huggingface/
+huggingface/
+
+# Streamlit configurations
+.streamlit/
